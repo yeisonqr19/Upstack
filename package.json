@@ -1,0 +1,23 @@
+{
+  "name": "upstack_inicio",
+  "version": "1.0.0",
+  "description": "este es mi primer proyecto del curso de node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "author": "Yeison Quiroz Reyes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "mariadb": "^2.4.2",
+    "pug": "^3.0.0",
+    "sequelize": "^6.3.5",
+    "shortid": "^2.2.15",
+    "slug": "^3.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

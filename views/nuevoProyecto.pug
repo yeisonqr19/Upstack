@@ -1,0 +1,16 @@
+extends masterPage
+
+block contenido
+    .contenido-principal
+        h1 #{nombrePagina}
+        if errores
+            each error in errores
+                .alerta.error #{error.texto}
+
+
+        form(class="agregar-proyecto" method="POST" action="/nuevoProyecto")
+            .campo 
+                label(for="nombre") Nombre del Proyecto
+                input(type="text" id="nombre" name="nombre" placeholder="Nombre del Proyecto")
+            .campo.enviar
+                input(type="submit" value="Agregar" class="boton")
