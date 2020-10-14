@@ -11,13 +11,16 @@ exports.homeProyectos = async (req, res) => {
   });
 };
 
-exports.nuevoProyecto = (req, res) => {
+exports.nuevoProyecto = async (req, res) => {
+  const proyectos = await modeloProyectos.findAll();
   res.render("nuevoProyecto", {
     nombrePagina: "Nuevo Proyecto",
+    proyectos,
   });
 };
 
 exports.agregarProyecto = async (req, res) => {
+  const proyectos = await modeloProyectos.findAll();
   //ver en la consola lo que escribe el usuario
   // console.log(req.body);
 
@@ -33,6 +36,7 @@ exports.agregarProyecto = async (req, res) => {
   if (errores.length > 0) {
     res.render("nuevoProyecto", {
       nombrePagina: "Nuevo Proyecto",
+      proyectos,
       errores: errores,
     });
   } else {
